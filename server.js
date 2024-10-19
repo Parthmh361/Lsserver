@@ -6,7 +6,8 @@ const chatRoute = require('./routes/chatRoute')
 const messageRoute = require('./routes/messageRoutes')
 const researchRoutes = require('./routes/researchRoutes');
 const puppeteer=require('puppeteer');
-
+const BASE_URL = process.env.BASE_URL
+const SERVER_PORT = process.env.PORT || 5000
 // const url = 'https://indiankanoon.org/browselaws/'
 
 // const main = async () => {
@@ -41,8 +42,9 @@ app.get('/',(req,res)=>{
     res.send('Hello World')
 
 })
+
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: "BASE_URL",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 200,
