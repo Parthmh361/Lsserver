@@ -44,7 +44,7 @@ app.get('/',(req,res)=>{
 })
 
 const corsOptions = {
-    origin: `${BASE_URL}`,
+    origin: `https://lsclient-parth-choudharis-projects.vercel.app/`,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 200,
