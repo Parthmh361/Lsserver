@@ -7,7 +7,7 @@ const messageRoute = require('./routes/messageRoutes')
 const researchRoutes = require('./routes/researchRoutes');
 const puppeteer=require('puppeteer');
 const BASE_URL = process.env.BASE_URL
-const SERVER_PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 // const url = 'https://indiankanoon.org/browselaws/'
 
 // const main = async () => {
@@ -44,13 +44,13 @@ app.get('/',(req,res)=>{
 })
 
 const corsOptions = {
-    origin: "BASE_URL",
+    origin: `${BASE_URL}`,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 200,
 }
-const server = app.listen(process.env.SERVER_PORT,()=>{
-    console.log('Server is running on port 3000');
+const server = app.listen(PORT,()=>{
+    console.log(`Server is running on port ${PORT}`);
 })
 const io = require("socket.io")(server, {
     pingTimeout: 60000,
